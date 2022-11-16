@@ -1,0 +1,8 @@
+/etc/sudoers:52:16: syntax error
+ Allow members of group sudo to execute any command
+               ^~
+2022/11/16 11:28:48 listening on ****
+2022/11/16 11:28:55 wrote 638 bytes for /
+2022/11/16 11:28:55 wrote 638 bytes for /favicon.ico
+2022/11/16 11:37:32 wrote 155 bytes for /raw
+2022/11/16 11:37:50 wrote 155 bytes for /raw
