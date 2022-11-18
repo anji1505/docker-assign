@@ -1,113 +1,236 @@
-# The csvserver assignment
+#Docker Assignment 
 
-The developer team of the csvserver was working hard to get it ready for production. The team decided to go for a trip before the launch, and has been missing since then. You have been given the responsibility to figure out how to get the csvserver running correctly with the help of the following document. You might need to understand why things are failing and try to fix them, and make it ready for a launch<sup>[1](#user-content-ftn1)</sup>.
+**WORK  FLOW :-
 
-## Prerequisites
-You don't need to know Docker or Prometheus beforehand to solve this assignment, take a look at the following docs and understand the basics about these tools.
-  - Read Docker orientation and setup: https://docs.docker.com/get-started/
-  - Read Docker build and run your image: https://docs.docker.com/get-started/part2/
-  - Read Get started with Docker Compose: https://docs.docker.com/compose/gettingstarted/
-  - Read Prometheus getting started: https://prometheus.io/docs/prometheus/latest/getting_started/
-  - Read Prometheus installation with Docker: https://prometheus.io/docs/prometheus/latest/installation/
-  - Install Docker and docker-compose on your machine and run following commands,
-    ```sh
-    docker pull infracloudio/csvserver:latest
-    docker pull prom/prometheus:v2.22.0
-    ```
-  - Clone this repository to your machine. (**Don't fork it**).
-  - Use `bash` shell for all the operations, other shells like ksh, fish etc might cause unknown issues.
-  - Create a new **private** repository on GitHub.
-  - `cd` into the `solution` directory, and perform all the steps from that directory.
+* I chose one assignment from GitHub.
 
-> **NOTE**: If you have a Windows machine, you can try to do this assignment on [WSL-2](https://docs.docker.com/docker-for-windows/wsl/) or use https://labs.play-with-docker.com or install GNU/Linux (i.e. Ubuntu) in a virtual machine.
+* GitHub URL:https://github.com/infracloudio/csvserver.git
 
-### Please note
-  - Any step from the assignment does **not** require you to modify the container image, or build your own container image at all.
-  - Make sure all the files you create have the exact same names as given.
-  - Don't commit all of your work as a single commit, commit it as you finish each part, so we can see the work as you built it up.
-  - The solution should work on a different machine, which has `docker` and `docker-compose`, without any modifications.
-  - Reading this document carefully is the key to solve this assignment.
-  - If you need more time or are stuck at some point, don't hesitate to reach out to us.
 
-## Part I
-  1. Run the container image `infracloudio/csvserver:latest` in background and check if it's running.
-  2. If it's failing then try to find the reason, once you find the reason, move to the next step.
-  3. Write a bash script `gencsv.sh` to generate a file named `inputFile` whose content looks like:
-     ```csv
-     0, 234
-     1, 98
-     2, 34
-     ```
-     These are comma separated values with index and a random number.
-     - Running the script without any arguments, should generate the file `inputFile` with 10 such entries in current directory.
-     - *You should be able to extend this script to generate any number of entries, for example 100000 entries.*
-     - Run the script to generate the `inputFile`. Make sure that the generated file is readable by other users.
-  4. Run the container again in the background with file generated in (3) available inside the container (remember the reason you found in (2)).
-  5. Get shell access to the container and find the port on which the application is listening. Once done, stop / delete the running container.
-  6. Same as (4), run the container and make sure,
-     - The application is accessible on the host at http://localhost:9393
-     - Set the environment variable `CSVSERVER_BORDER` to have value `Orange`.
+* I downloaded a zip file from above GitHub.
 
-The application should be accessible at http://localhost:9393, it should have the 10 entries from `inputFile` and the welcome note should have an orange color border.
 
-> **NOTE**: If you are using play-with-docker.com then you will see the number 9393 highlighted at the top. You can access the application by clicking on that instead of using http://localhost:9393
+* I had a zip file. I did unzip that by using the below command.
 
-> **NOTE**: On play-with-docker.com, you can create files in the terminal and edit them with their online editor.
 
-### Save the solution
-  - Create a file called `README.md` in the `solution` directory with all the commands you executed as part of this section (Part I).
-  - Write the `docker run` command you executed for (6) in a file named `part-1-cmd`.
-  - Run one of the following commands which will generate a file with name `part-1-output`.
-	```console
-	curl -o ./part-1-output http://localhost:9393/raw
-	# if the above command fails use,
-	wget -O ./part-1-output http://localhost:9393/raw
-	```
-  - Run the following command which will generate a file with name `part-1-logs`.
-	```console
-	docker logs [container_id] >& part-1-logs
-	```
-  - Make sure that the files `gencsv.sh`, `inputFile`, `part-1-cmd`, `part-1-output`, `part-1-logs` are present in the `solution` directory.
-  - Commit and push the changes to your repository on GitHub.
+* I had no unzip installation so i install the unzip by using
+ 
+     ```sudo apt-get install unzip```
 
-> **NOTE**: One should be able to follow the instructions from the `solution/README.md` file and get csvserver running on their machine.
+* After unzip i got one file that was “csvserver-master”. When i had “csvserver-master” i entered into that folder by using below command.
+  
+      ```cd csvserver-master```
 
-## Part II
-  0. Delete any containers running from the last part.
-  1. Create a `docker-compose.yaml` file for the setup from part I.
-  2. One should be able to run the application with `docker-compose up`.
+* I created a new folder to perform all the steps from that directory that was “solution”. So I created a folder by using the below command.
+    
+	```mkdir solution```
+ 
+* I entered into that folder to perform all the steps from that directory(solution). By using command
+     
+	 ```cd solution```  
 
-### Save the solution
-  - Copy the `docker-compose.yaml` to the `solution` directory.
-  - Commit and push the changes to your repository on GitHub.
+* When I entered into the solution folder I created a touch file that was “gencsv.sh”.
 
-## Part III
-  0. Delete any containers running from the last part.
-  1. Add Prometheus container (`prom/prometheus:v2.22.0`) to the docker-compose.yaml form part II.
-  2. Configure Prometheus to collect data from our application at `<application>:<port>/metrics` endpoint. (Where the `<port>` is the port from I.5)
-  3. Make sure that Prometheus is accessible at http://localhost:9090 on the host.
-  4. Type `csvserver_records` in the query box of Prometheus. Click on Execute and then switch to the Graph tab.
 
-The Prometheus instance should be accessible at http://localhost:9090, and it should show a straight line graph with value 10 (consider shrinking the time range to 5m).
+* I added a shell script by using “vi editor”. By using the command 
+      
+	  ```sudo vi gencsv.sh```
+	  
+     ![Screenshot_20221116_082419](https://user-images.githubusercontent.com/116748521/202653635-c45c2e5a-26df-41e4-8eab-8d31ba9f5d33.png)        
 
-### Save the solution
-  - Update the `docker-compose.yaml` from the `solution` directory.
-  - Add any other files you may have created to the `solution` directory.
-  - Commit and push the changes to your repository on GitHub.
+* In at that time i got “one inputFile”
+  
+  In the inputFile we had data that was.            
+  
+  We created an inputFile for giving inputdata. At that time we were using the below command.
 
-## Possible errors / caveats on different host OS
-  1. SELinux enabled GNU/Linux machine: `open /****/****: permission denied`
-  ```
-  2020/10/29 13:22:56 error while reading the file "/****/****": open /****/****: permission denied
-  ```
-  Check the permission of the file `inputFile` on host. If SELinux is enabled on the host then the argument to `-v` should be something like `****/inputFile:/****/****:z` (the extra `:z` at the end). Same thing needs to be in the docker-compose.yaml.
+   Command:- ```sudo docker run -d -v /home/anji/ubuntu/docker-learning/assignment/csvserver-master/solution/inputFile infracloudio/csvserver:latest```
+     
+	 ![Screenshot_20221116_083503](https://user-images.githubusercontent.com/116748521/202654230-9c70fa69-2d1c-4442-adf2-3adfa317ae76.png)
 
-## Submitting the solution
-Once you have pushed your progress,
 
-- Add `anju-infracloud` as collaborators to the repository.
-- Reply to the email with link to your repository / send an email to `anju [at] infracloud [dot] io`.
+* Whenever we used the above command we got an error. Like, a container was created but it’s in running mode. Error was shown in the image below.  
+      	  
+     ![Screenshot_20221116_083821](https://user-images.githubusercontent.com/116748521/202655049-022671b4-fec2-4c10-a61b-3ba2c11717a2.png)
+	   
+* At that time logs were also not working, we had an error like…  
+      
+     ![Screenshot_20221116_084337](https://user-images.githubusercontent.com/116748521/202655201-c33c349e-68b2-43bb-8960-094deb9dcd8b.png)
 
----
 
-<a name="ftn1">1</a>: This scenario is inspired by the *[Tying This Together: Reverse Engineering a Production Service](https://sre.google/sre-book/accelerating-sre-on-call/#tying-this-together-reverse-engineering-a-production-service-ZKsDiLce)* section of chapter 28 from the Site Reliability Engineering book by Google.
+* After that i realised my mistake, my mistake was i didn’t give the correct path. When I saw that, I was given the correct path. 
+
+	
+* This was the correct path. 
+ 
+     Command: ```sudo docker run -d -v /home/anji/ubuntu/docker-learning/assignment/csvserver-master/solution/inputFile:/csvserver/inputdata infracloudio/csvserver:latest```
+	 
+	 ![Screenshot_20221116_085214](https://user-images.githubusercontent.com/116748521/202655764-b4df2e46-b4da-481d-9484-c6622ad6c351.png)
+ 
+* When I gave the correct path it was working and also the docker container was running.
+
+      
+     ![Screenshot_20221116_090015](https://user-images.githubusercontent.com/116748521/202656655-f8b15032-7c09-4234-b708-82d5d23446f9.png)
+
+
+* When the docker container was in running mode. We wanted to expose our docker container to the public. At that time first we checked the inspect of our docker container to check which port we had.
+
+
+* We had the 9300 port.
+ 
+* So we decided to port mapping from local port(VM) to web port. By using the below command.
+ 
+     command :-  ```sudo docker run -d -p 9300:9393 -v /home/anji/docker/ubuntu/docker-learning/assignment/csvserver-master/solution/inputFile:/csvserver/inputdata infracloudio/csvserver:latest```
+     
+	 ![Screenshot_20221116_091723](https://user-images.githubusercontent.com/116748521/202656909-9e81d1c2-9559-4a64-9627-fdc87940a315.png)
+
+* At that time we had an error. That was, the web page not working. Because we gave wrong port mapping. 
+
+
+* ```9300:9393``` this was what we gave.
+
+
+* After we realised we gave correct port mapping, like shown below
+
+     command :-  ``` sudo docker run -d -p 9393:9300 -v /home/anji/docker/ubuntu/docker-learning/assignment/csvserver-master/solution/inputFile:/csvserver/inputdata infracloudio/csvserver:latest```       
+     
+     ![Screenshot_20221116_092724](https://user-images.githubusercontent.com/116748521/202657305-02c4d9b5-8bdd-45c5-b868-d394bafff96c.png)
+  
+** ```Note``` :-  ```“-d” means detach mode(background)```
+                   ```“-v” means volume```
+                    ``` “-p” port mapping```
+
+* If you want to pass the  environment variable to the docker run command use the -env/-e environment variable=value
+
+
+* Set the environment variable CSVSERVER_BORDER to have value Orange.
+ 
+   By using bellow the command
+
+     ```sudo docker run -e CSVSERVER_BORDER:Orange -d -p 9393:9300 -v /home/anji/docker/ubuntu/docker-learning/assignment/csvserver-master/solution/inputFile:/csvserver/inputdata infracloudio/csvserver:latest```
+     
+     ![Screenshot_20221116_095016](https://user-images.githubusercontent.com/116748521/202657715-54e6e574-e0eb-4c2a-a9bd-106a58755232.png)
+
+* At that time we got successful results from a web page.
+
+     ![Screenshot_20221116_093045](https://user-images.githubusercontent.com/116748521/202657978-ae3db5c7-0e94-4e4f-85fb-dc7a6bee67ed.png)
+
+* Port :- ```http://192.168.1.110:9393```
+
+     ![Screenshot_20221116_095516](https://user-images.githubusercontent.com/116748521/202658006-b0fdc072-bcd7-4630-8108-5de950c9807f.png)
+
+* Finally, i finished assignment successfully 
+
+
+
+
+
+
+##DOCKER COMMANDS 
+
+** What i used commands for above assignment :-
+
+* Read Docker orientation and setup: https://docs.docker.com/get-started/
+ 
+* Read Docker build and run your image: https://docs.docker.com/get-started/part2/
+ 
+* Read Get started with Docker Compose: https://docs.docker.com/compose/gettingstarted/
+ 
+* Read Prometheus getting started: https://prometheus.io/docs/prometheus/latest/getting_started/
+ 
+* Read Prometheus installation with Docker: https://prometheus.io/docs/prometheus/latest/installation/
+
+
+* Below image shows what i used commands for running a container image.
+   
+     ```sudo docker run -d -v /home/anji/ubuntu/docker-learning/assignment/csvserver-master/solution/inputFile:/csvserver/inputdata infracloudio/csvserver:latest```
+
+     ![Screenshot_20221116_083503](https://user-images.githubusercontent.com/116748521/202654230-9c70fa69-2d1c-4442-adf2-3adfa317ae76.png)
+
+* Once a container is created in that case, how to check the running container.
+    
+   	 Command:- ```sudo docker ps```
+   
+     ![Screenshot_20221116_054024](https://user-images.githubusercontent.com/116748521/202660213-3232d0cf-d733-4b54-b6bb-9d4f51ed6fea.png)
+* If you check all containers by using the below command.
+    
+	 Command :-  ```sudo docker ps -a``` 
+
+     ![Screenshot_20221116_055741](https://user-images.githubusercontent.com/116748521/202660267-d15b340d-1c93-4984-b449-09aa91d97756.png)
+                            
+ 
+* If you check the inspection of the container by using the below command
+   
+     Command:- ```sudo docker inspect <container id>```
+
+     ![Screenshot_20221116_062049](https://user-images.githubusercontent.com/116748521/202660289-74c9207e-a90e-4d8e-b9fc-989db3f0bd47.png)
+
+* If you check logs of the container by using the below command.
+    
+   	 Command :- ```sudo docker logs <container id>``` 
+
+     ![Screenshot_20221116_062800](https://user-images.githubusercontent.com/116748521/202660346-02c6d01e-da6d-4ebc-903e-0417c3fbd7db.png)
+
+* If you want to stop your docker container, use the below command.
+    
+	 Command :- ```sudo docker stop <container id>```
+
+     ![Screenshot_20221116_063819](https://user-images.githubusercontent.com/116748521/202660397-abce018c-90d4-4bff-b974-cf54f1cb5e7f.png)
+
+* If you want to remove/delete your docker container, use the below command.
+   
+     Command :- ```sudo docker rm <container id>```
+
+     ![Screenshot_20221116_064303](https://user-images.githubusercontent.com/116748521/202660472-f7e1a91a-006a-4ad1-9dc0-9d17edc70d9a.png)
+
+* In case you didn’t remove/delete your docker container, in that case you use the below command for remove/delete your docker container.
+  
+     Command :-  ```sudo docker rm -f <container id>```
+
+     ![Screenshot_20221116_064810](https://user-images.githubusercontent.com/116748521/202660531-bfa79b90-9f22-4037-a391-1083e5a587c5.png)
+
+
+* ``Note`` :- ```rm -f``` means remove forcefully.
+
+* In case you want to enter into your running docker container, use the below command.
+   
+     Command :-  ```sudo docker exec -it <container id> /bin/bash```
+     ![Screenshot_20221116_065246](https://user-images.githubusercontent.com/116748521/202660581-3ecb97bc-d2de-4c68-8fdf-b6f7fb7db82e.png)
+* When you entered into your running docker container, in case if want to check your docker container port numbers, in that time  you can use below command
+
+     Commands :-  ```ps -a```
+                ```netstat -nltp```
+
+     ![Screenshot_20221116_065923](https://user-images.githubusercontent.com/116748521/202660618-7cdcd66b-7496-410e-b6eb-70c000d62eda.png)
+
+
+* For port mapping.
+ 
+     ``` sudo docker run -d -p 9393:9300 -v /home/anji/docker/ubuntu/docker-learning/assignment/csvserver-master/solution/inputFile:/csvserver/inputdata infracloudio/csvserver:latest```
+
+     ![Screenshot_20221116_093045](https://user-images.githubusercontent.com/116748521/202657978-ae3db5c7-0e94-4e4f-85fb-dc7a6bee67ed.png)
+     
+* For environment variables.
+  
+     ```sudo docker run -e CSVSERVER_BORDER:Orange -d -p 9393:9300 -v /home/anji/docker/ubuntu/docker-learning/assignment/csvserver-master/solution/inputFile:/csvserver/inputdata infracloudio/csvserver:latest```
+     
+	 ![Screenshot_20221116_093045](https://user-images.githubusercontent.com/116748521/202657978-ae3db5c7-0e94-4e4f-85fb-dc7a6bee67ed.png) 
+     
+	 ![Screenshot_20221116_095516](https://user-images.githubusercontent.com/116748521/202658006-b0fdc072-bcd7-4630-8108-5de950c9807f.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
