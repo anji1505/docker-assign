@@ -1,0 +1,11 @@
+version: '2'
+services:
+  csvserever:
+    image: infracloudio/csvserver
+    ports:
+      - "9393:9300"
+    volumes:
+      - /home/anji//docker-assign/csvserver-master/docker-assign/solution/inputFile:/csvserver/inputdata
+    environment:
+      - CSVSERVER_BORDER=Orange
+
