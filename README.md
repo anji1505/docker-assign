@@ -17,7 +17,7 @@
  
      ``` sudo apt-get install unzip ```
 
-* After unzip i got one file that was “csvserver-master”. When i had “csvserver-master” i entered into that folder by using below command.
+* After unzip i got one file that was ```“csvserver-master”```. When i had “csvserver-master” i entered into that folder by using below command.
   
       ``` cd csvserver-master ```
 
