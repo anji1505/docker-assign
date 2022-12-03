@@ -19,7 +19,7 @@
 
 * After unzip i got one file that was ```“csvserver-master”```. When i had “csvserver-master” i entered into that folder by using below command.
   
-      ``` cd csvserver-master ```
+      cd csvserver-master
 
 * I created a new folder to perform all the steps from that directory that was “solution”. So I created a folder by using the below command.
      
