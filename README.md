@@ -122,9 +122,9 @@
 
 * Finally, i finished assignment successfully 
 
-### DOCKER COMMANDS 
+# DOCKER-COMMANDS 
 
-#### What i used commands for above assignment :-
+## What i used commands for above assignment :-
 
 * Read Docker orientation and setup: https://docs.docker.com/get-started/
  
