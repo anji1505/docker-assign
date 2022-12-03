@@ -29,12 +29,12 @@
      
 	 ``` cd solution ```  
 
-* When I entered into the solution folder I created a touch file that was “gencsv.sh”.
+* When I entered into the solution folder I created a touch file that was `“gencsv.sh”`
 
 
 * I added a shell script by using “vi editor”. By using the command 
       
-	  sudo vi gencsv.sh
+	 ` sudo vi gencsv.sh `
 	  
      ![Screenshot_20221116_082419](https://user-images.githubusercontent.com/116748521/202653635-c45c2e5a-26df-41e4-8eab-8d31ba9f5d33.png)        
 
