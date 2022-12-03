@@ -34,11 +34,11 @@
 
 * I added a shell script by using “vi editor”. By using the command 
       
-	  ``` sudo vi gencsv.sh ```
+	  sudo vi gencsv.sh
 	  
      ![Screenshot_20221116_082419](https://user-images.githubusercontent.com/116748521/202653635-c45c2e5a-26df-41e4-8eab-8d31ba9f5d33.png)        
 
-* In at that time i got “one inputFile”
+* In at that time i got  ```“one inputFile”```
   
   In the inputFile we had data that was.            
   
