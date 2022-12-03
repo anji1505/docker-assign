@@ -44,7 +44,8 @@
   
   We created an inputFile for giving inputdata. At that time we were using the below command.
 
-   Command:- ``` sudo docker run -d -v /home/anji/ubuntu/docker-learning/assignment/csvserver-master/solution/inputFile infracloudio/csvserver:latest ```
+   Command:-
+        sudo docker run -d -v /home/anji/ubuntu/docker-learning/assignment/csvserver-master/solution/inputFile infracloudio/csvserver:latest 
      
 	 ![Screenshot_20221116_083503](https://user-images.githubusercontent.com/116748521/202654230-9c70fa69-2d1c-4442-adf2-3adfa317ae76.png)
 
