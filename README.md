@@ -15,26 +15,26 @@
 
 * I had no unzip installation so i install the unzip by using
  
-     ```sudo apt-get install unzip```
+     ``` sudo apt-get install unzip ```
 
 * After unzip i got one file that was “csvserver-master”. When i had “csvserver-master” i entered into that folder by using below command.
   
-      ```cd csvserver-master```
+      ``` cd csvserver-master ```
 
 * I created a new folder to perform all the steps from that directory that was “solution”. So I created a folder by using the below command.
-    
-	```mkdir solution```
+     
+	``` mkdir solution ```
  
 * I entered into that folder to perform all the steps from that directory(solution). By using command
      
-	 ```cd solution```  
+	 ``` cd solution ```  
 
 * When I entered into the solution folder I created a touch file that was “gencsv.sh”.
 
 
 * I added a shell script by using “vi editor”. By using the command 
       
-	  ```sudo vi gencsv.sh```
+	  ``` sudo vi gencsv.sh ```
 	  
      ![Screenshot_20221116_082419](https://user-images.githubusercontent.com/116748521/202653635-c45c2e5a-26df-41e4-8eab-8d31ba9f5d33.png)        
 
@@ -44,7 +44,7 @@
   
   We created an inputFile for giving inputdata. At that time we were using the below command.
 
-   Command:- ```sudo docker run -d -v /home/anji/ubuntu/docker-learning/assignment/csvserver-master/solution/inputFile infracloudio/csvserver:latest```
+   Command:- ``` sudo docker run -d -v /home/anji/ubuntu/docker-learning/assignment/csvserver-master/solution/inputFile infracloudio/csvserver:latest ```
      
 	 ![Screenshot_20221116_083503](https://user-images.githubusercontent.com/116748521/202654230-9c70fa69-2d1c-4442-adf2-3adfa317ae76.png)
 
@@ -63,9 +63,9 @@
 	
 * This was the correct path. 
  
-     Command: ```sudo docker run -d -v /home/anji/ubuntu/docker-learning/assignment/csvserver-master/solution/inputFile:/csvserver/inputdata infracloudio/csvserver:latest```
+     Command: ``` sudo docker run -d -v /home/anji/ubuntu/docker-learning/assignment/csvserver-master/solution/inputFile:/csvserver/inputdata   infracloudio/csvserver:lates t```
 	 
-	 ![Screenshot_20221116_085214](https://user-images.githubusercontent.com/116748521/202655764-b4df2e46-b4da-481d-9484-c6622ad6c351.png)
+     ![Screenshot_20221116_085214](https://user-images.githubusercontent.com/116748521/202655764-b4df2e46-b4da-481d-9484-c6622ad6c351.png)
  
 * When I gave the correct path it was working and also the docker container was running.
 
@@ -76,29 +76,29 @@
 * When the docker container was in running mode. We wanted to expose our docker container to the public. At that time first we checked the inspect of our docker container to check which port we had.
 
 
-* We had the 9300 port.
+* We had the ``` 9300 ``` port.
  
 * So we decided to port mapping from local port(VM) to web port. By using the below command.
  
-     command :-  ```sudo docker run -d -p 9300:9393 -v /home/anji/docker/ubuntu/docker-learning/assignment/csvserver-master/solution/inputFile:/csvserver/inputdata infracloudio/csvserver:latest```
+     command :-  ``` sudo docker run -d -p 9300:9393 -v /home/anji/docker/ubuntu/docker-learning/assignment/csvserver-master/solution/inputFile:/csvserver/inputdata infracloudio/csvserver:latest ```
      
 	 ![Screenshot_20221116_091723](https://user-images.githubusercontent.com/116748521/202656909-9e81d1c2-9559-4a64-9627-fdc87940a315.png)
 
 * At that time we had an error. That was, the web page not working. Because we gave wrong port mapping. 
 
 
-* ```9300:9393``` this was what we gave.
+* ``` 9300:9393 ``` this was what we gave.
 
 
 * After we realised we gave correct port mapping, like shown below
 
-     command :-  ``` sudo docker run -d -p 9393:9300 -v /home/anji/docker/ubuntu/docker-learning/assignment/csvserver-master/solution/inputFile:/csvserver/inputdata infracloudio/csvserver:latest```       
+     command :-  ``` sudo docker run -d -p 9393:9300 -v /home/anji/docker/ubuntu/docker-learning/assignment/csvserver-master/solution/inputFile:/csvserver/inputdata infracloudio/csvserver:latest ```       
      
      ![Screenshot_20221116_092724](https://user-images.githubusercontent.com/116748521/202657305-02c4d9b5-8bdd-45c5-b868-d394bafff96c.png)
   
-** ```Note``` :-  ```“-d” means detach mode(background)```
-                   ```“-v” means volume```
-                    ``` “-p” port mapping```
+** ``` Note ``` :-  ``` “-d” means detach mode(background) ```
+                   ``` “-v” means volume ```
+                    ``` “-p” port mapping ```
 
 * If you want to pass the  environment variable to the docker run command use the -env/-e environment variable=value
 
@@ -107,7 +107,7 @@
  
    By using bellow the command
 
-     ```sudo docker run -e CSVSERVER_BORDER:Orange -d -p 9393:9300 -v /home/anji/docker/ubuntu/docker-learning/assignment/csvserver-master/solution/inputFile:/csvserver/inputdata infracloudio/csvserver:latest```
+     ``` sudo docker run -e CSVSERVER_BORDER:Orange -d -p 9393:9300 -v /home/anji/docker/ubuntu/docker-learning/assignment/csvserver-master/solution/inputFile:/csvserver/inputdata infracloudio/csvserver:latest ```
      
      ![Screenshot_20221116_095016](https://user-images.githubusercontent.com/116748521/202657715-54e6e574-e0eb-4c2a-a9bd-106a58755232.png)
 
@@ -115,7 +115,7 @@
 
      ![Screenshot_20221116_093045](https://user-images.githubusercontent.com/116748521/202657978-ae3db5c7-0e94-4e4f-85fb-dc7a6bee67ed.png)
 
-* Port :- ```http://192.168.1.110:9393```
+* Port :- ``` http://192.168.1.110:9393 ```
 
      ![Screenshot_20221116_095516](https://user-images.githubusercontent.com/116748521/202658006-b0fdc072-bcd7-4630-8108-5de950c9807f.png)
 
