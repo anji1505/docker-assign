@@ -17,7 +17,7 @@
  
      ``` sudo apt-get install unzip ```
 
-* After unzip i got one file that was ```“csvserver-master”```. When i had “csvserver-master” i entered into that folder by using below command.
+* After unzip I got one file that was ```“csvserver-master”```. When I had “csvserver-master” I entered into that folder by using below command.
   
       cd csvserver-master
 
@@ -38,7 +38,7 @@
 	  
      ![Screenshot_20221116_082419](https://user-images.githubusercontent.com/116748521/202653635-c45c2e5a-26df-41e4-8eab-8d31ba9f5d33.png)        
 
-* In at that time i got  ```“one inputFile”```
+* In at that time I got  ```“one inputFile”```
   
   In the inputFile we had data that was.            
   
@@ -59,7 +59,7 @@
      ![Screenshot_20221116_084337](https://user-images.githubusercontent.com/116748521/202655201-c33c349e-68b2-43bb-8960-094deb9dcd8b.png)
 
 
-* After that i realised my mistake, my mistake was i didn’t give the correct path. When I saw that, I was given the correct path. 
+* After that I realised my mistake, my mistake was I didn’t give the correct path. When I saw that, I was given the correct path. 
 
 	
 * This was the correct path. 
@@ -120,11 +120,11 @@
 
      ![Screenshot_20221116_095516](https://user-images.githubusercontent.com/116748521/202658006-b0fdc072-bcd7-4630-8108-5de950c9807f.png)
 
-* Finally, i finished assignment successfully 
+* Finally, I finished assignment successfully 
 
 # DOCKER-COMMANDS 
 
-## What i used commands for above assignment :-
+## What I used commands for above assignment those are :-
 
 * Read Docker orientation and setup: https://docs.docker.com/get-started/
  
@@ -137,7 +137,7 @@
 * Read Prometheus installation with Docker: https://prometheus.io/docs/prometheus/latest/installation/
 
 
-* Below image shows what i used commands for running a container image.
+* Below image shows what I used commands for running a container image.
    
      ```sudo docker run -d -v /home/anji/ubuntu/docker-learning/assignment/csvserver-master/solution/inputFile:/csvserver/inputdata infracloudio/csvserver:latest```
 
