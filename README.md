@@ -13,7 +13,7 @@
 * I had a zip file. I did unzip that by using the below command.
 
 
-* I had no unzip installation so i install the unzip by using
+* I had no unzip installation so I installed the unzip by using
  
      ``` sudo apt-get install unzip ```
 
